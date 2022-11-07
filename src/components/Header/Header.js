@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-
+import { MdPhotoCameraFront } from "react-icons/md";
 
 const Header = () => {
 
 
     return (
-        <div className="navbar bg-cyan-600  shadow-xl rounded-xl mb-10">
+        <div className="navbar bg-pink-200  shadow-xl rounded-xl mb-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,14 +19,14 @@ const Header = () => {
              
             </ul>
           </div>
-          < a href  className="text-white normal-case text-2xl font-bold">Smile Seeker</a>
+          < a href  className="text-pink-600 normal-case text-2xl font-bold flex d-flex"><MdPhotoCameraFront></MdPhotoCameraFront> Smile Seeker</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             
-            <li className='font-bold'><Link to='/'>Home</Link></li>
-            <li className='font-bold'><Link to='/add service'>Add Service</Link></li>
-            <li className='font-bold'><Link to='/services'>All Services</Link></li>
+            <li className='font-bold text-pink-600'><Link to='/'>Home</Link></li>
+            <li className='font-bold text-pink-600'><Link to='/add service'>Add Service</Link></li>
+            <li className='font-bold text-pink-600'><Link to='/services'>All Services</Link></li>
            
           </ul>
         </div>
