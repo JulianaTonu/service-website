@@ -16,6 +16,7 @@ const Header = () => {
             <li className='font-bold'><Link to='/'>Home</Link></li>
             <li className='font-bold'><Link to='/add service'>Add Service</Link></li>
             <li className='font-bold'><Link to='/services'>All Services</Link></li>
+            <li className='font-bold text-pink-600'><Link to='/login'>Login</Link></li>
             <li className='font-bold'><Link to='/register'>Register</Link></li>
              
             </ul>
@@ -28,6 +29,7 @@ const Header = () => {
             <li className='font-bold text-pink-600'><Link to='/'>Home</Link></li>
             <li className='font-bold text-pink-600'><Link to='/add service'>Add Service</Link></li>
             <li className='font-bold text-pink-600'><Link to='/services'>All Services</Link></li>
+            <li className='font-bold text-pink-600'><Link to='/login'>Login</Link></li>
             <li className='font-bold text-pink-600'><Link to='/register'>Register</Link></li>
           </ul>
         </div>
