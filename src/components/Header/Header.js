@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
 import { MdPhotoCameraFront } from "react-icons/md";
+import { useContext } from 'react';
+import { AuthContext } from './../../context/AuthProvider';
 
 const Header = () => {
+const {user,logout}=useContext(AuthContext)
 
-
+const handleLogout=()=>{
+  logout()
+  .then(()=>{})
+  .catch(err=>console.error(err))
+}
     return (
         <div className="navbar bg-pink-200  shadow-xl rounded-xl mb-10">
         <div className="navbar-start">
@@ -16,8 +23,20 @@ const Header = () => {
             <li className='font-bold'><Link to='/'>Home</Link></li>
             <li className='font-bold'><Link to='/add service'>Add Service</Link></li>
             <li className='font-bold'><Link to='/services'>All Services</Link></li>
-            <li className='font-bold text-pink-600'><Link to='/login'>Login</Link></li>
-            <li className='font-bold'><Link to='/register'>Register</Link></li>
+
+{/* //add condition for login and logout           */}
+            {
+          user?.email ?
+          <>
+         <li className='text-primary font-bold mt-3'>{user?.email}</li>
+          <li className=''><button className='btn btn-ghost font-bold' onClick={handleLogout}>Logout</button></li>
+          </>
+            :
+           <>
+                <li className='font-bold text-pink-600'><Link to='/login'>Login</Link></li>
+                <li className='font-bold'><Link to='/register'>Register</Link></li>
+                </>
+          }
              
             </ul>
           </div>
@@ -29,8 +48,19 @@ const Header = () => {
             <li className='font-bold text-pink-600'><Link to='/'>Home</Link></li>
             <li className='font-bold text-pink-600'><Link to='/add service'>Add Service</Link></li>
             <li className='font-bold text-pink-600'><Link to='/services'>All Services</Link></li>
-            <li className='font-bold text-pink-600'><Link to='/login'>Login</Link></li>
-            <li className='font-bold text-pink-600'><Link to='/register'>Register</Link></li>
+            {
+          user?.email ?
+          <>
+         <li className='text-primary font-bold mt-3'>{user?.email}</li>
+          <li className=''><button className='btn btn-ghost font-bold' onClick={handleLogout}>Logout</button></li>
+          </>
+            :
+           <>
+                <li className='font-bold text-pink-600'><Link to='/login'>Login</Link></li>
+                <li className='font-bold'><Link to='/register'>Register</Link></li>
+                </>
+          }
+           
           </ul>
         </div>
         
