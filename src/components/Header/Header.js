@@ -5,7 +5,7 @@ const Header = () => {
 
 
     return (
-        <div className="navbar bg-base-100  shadow-xl rounded-xl mb-10">
+        <div className="navbar bg-cyan-600  shadow-xl rounded-xl mb-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,7 +19,7 @@ const Header = () => {
              
             </ul>
           </div>
-          < a href  className="text-primary normal-case text-2xl font-bold">Smile Seeker</a>
+          < a href  className="text-white normal-case text-2xl font-bold">Smile Seeker</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
