@@ -5,8 +5,17 @@ import useTitle from '../../hooks/useTitle';
 
 
 const Register = () => {
-  const {createUser}=useContext(AuthContext)
+  const {createUser,loading}=useContext(AuthContext)
   useTitle('Register')
+
+  
+//add spinner
+if(loading){
+  return (
+      <button className="btn loading "></button>
+  )
+}
+
     const handleSignup=event=>{
         event.preventDefault()
         const form =event.target

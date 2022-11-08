@@ -3,11 +3,21 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 import useTitle from './../../hooks/useTitle';
+
 const Login = () => {
- const {signIn,signInWithGoogle }=useContext(AuthContext)
+ const {signIn,signInWithGoogle,loading }=useContext(AuthContext)
  const location=useLocation()
  const navigate =useNavigate()
 useTitle('Login')
+
+//add spinner
+if(loading){
+  return (
+      <button className="btn loading "></button>
+  )
+}
+
+
     const handleSubmit=event=>{
 
       const  from =location.state?.from?.pathname || '/' ;
@@ -74,7 +84,7 @@ useTitle('Login')
               </div>
             </form>
 
-            <p className=' text-center font-semibold '>New to this website? Please <Link className='text-pink-600 font-bold' to='/register'>Signup</Link></p>
+            <p className=' text-center font-semibold '>New to this website? Please <Link className='text-pink-600 font-bold' to='/register'>Register</Link></p>
           </div>
         </div>
       </div>
