@@ -12,7 +12,7 @@ const handleLogout=()=>{
   .catch(err=>console.error(err))
 }
     return (
-        <div className="navbar bg-sky-200  shadow-xl rounded-xl mb-10">
+        <div className="navbar bg-blue-900 text-grey-200   shadow-xl rounded-xl mb-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,36 +30,36 @@ const handleLogout=()=>{
           user?.email ?
           <>
          <li className='text-primary font-bold mt-3'>{user?.email}</li>
-          <li className=''><button className='btn btn-ghost font-bold' onClick={handleLogout}>Logout</button></li>
+          <li className=''><button className='btn btn-ghost font-bold text-white font-serif' onClick={handleLogout}>Logout</button></li>
           </>
             :
            <>
-                <li className='font-bold text-primary'><Link to='/login'>Login</Link></li>
-                <li className='font-bold text-primary'><Link to='/register'>Register</Link></li>
+                <li className='font-bold  text-white font-serif'><Link to='/login'>Login</Link></li>
+                <li className='font-bold  text-white font-serif'><Link to='/register'>Register</Link></li>
                 </>
           }
              
             </ul>
           </div>
-          < a href  className="text-primary normal-case text-2xl font-bold flex d-flex font-mono"><MdPhotoCameraFront></MdPhotoCameraFront> Smile Seekers</a>
+          < a href  className="text-white normal-case text-2xl font-bold flex d-flex font-mono"><MdPhotoCameraFront></MdPhotoCameraFront>  <img src="https://www.smileseekersbd.com/wp-content/uploads/2021/06/Smile-Seeker-Signature-White.png" className='w-44 ' alt="" /></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             
-            <li className='font-bold text-primary'><Link to='/'>Home</Link></li>
-            <li className='font-bold text-primary'><Link to='/blog'>Blog</Link></li>
-            <li className='font-bold text-primary'><Link to='/add'>Add Service</Link></li>
-            <li className='font-bold text-primary'><Link to='/services'>Services</Link></li>
+            <li className='font-bold text-white font-serif'><Link to='/'>Home</Link></li>
+            <li className='font-bold text-white font-serif'><Link to='/blog'>Blog</Link></li>
+            <li className='font-bold text-white font-serif'><Link to='/add'>Add Service</Link></li>
+            <li className='font-bold text-white font-serif'><Link to='/services'>Services</Link></li>
             {
           user?.email ?
           <>
          <li className='text-primary font-bold mt-3'>{user?.email}</li>
-          <li className=''><button className='btn btn-ghost font-bold' onClick={handleLogout}>Logout</button></li>
+          <li className=''><button className='btn btn-ghost font-bold text-white font-serif' onClick={handleLogout}>Logout</button></li>
           </>
             :
            <>
-                <li className='font-bold text-primary'><Link to='/login'>Login</Link></li>
-                <li className='font-bold text-primary'><Link to='/register'>Register</Link></li>
+                <li className='font-bold text-white font-serif'><Link to='/login'>Login</Link></li>
+                <li className='font-bold text-white font-serif'><Link to='/register'>Register</Link></li>
                 </>
           }
            
