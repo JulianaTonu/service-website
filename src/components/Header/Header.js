@@ -21,6 +21,7 @@ const handleLogout=()=>{
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
              
             <li className='font-bold'><Link to='/'>Home</Link></li>
+            <li className='font-bold'><Link to='/blog'>Blog</Link></li>
             <li className='font-bold'><Link to='/add service'>Add Service</Link></li>
             <li className='font-bold'><Link to='/services'>All Services</Link></li>
 
@@ -46,6 +47,7 @@ const handleLogout=()=>{
           <ul className="menu menu-horizontal p-0">
             
             <li className='font-bold text-primary'><Link to='/'>Home</Link></li>
+            <li className='font-bold text-primary'><Link to='/blog'>Blog</Link></li>
             <li className='font-bold text-primary'><Link to='/add'>Add Service</Link></li>
             <li className='font-bold text-primary'><Link to='/services'>Services</Link></li>
             {
