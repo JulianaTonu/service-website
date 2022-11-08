@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { Form } from 'react-router-dom';
 
 const AddService = () => {
@@ -18,6 +19,7 @@ const AddService = () => {
     })
     .then(res=>res.json())
     .then(data=>{
+        toast.success('Service added Successfully')
         console.log(data)
     })
     }
