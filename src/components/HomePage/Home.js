@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import PopularService from './PopularService/PopularService';
 
 const Home = () => {
@@ -22,6 +22,10 @@ service={service}
 }
 </div>
 
+<div className="card-actions justify-center my-10">
+    
+ <Link to={`/services`}> <button className="btn btn-primary">See All</button></Link>
+</div>
 </div>
         </div>
     );
