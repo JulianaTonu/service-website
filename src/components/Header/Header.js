@@ -41,7 +41,7 @@ const handleLogout=()=>{
              
             </ul>
           </div>
-          < a href  className="text-primary normal-case text-2xl font-bold flex d-flex"><MdPhotoCameraFront></MdPhotoCameraFront> Smile Seeker</a>
+          < a href  className="text-primary normal-case text-2xl font-bold flex d-flex font-mono"><MdPhotoCameraFront></MdPhotoCameraFront> Smile Seekers</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
