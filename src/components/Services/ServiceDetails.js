@@ -6,19 +6,22 @@ const ServiceDetails = () => {
     return (
    
         <>
-        <div className="card card-compact w-80   bg-base-100 shadow-xl">
-        <figure className='h-26 '><img src={img} alt="Shoes"/></figure>
-        <div className="card-body">
-          <h2 className="card-title text-2xl">{title}</h2>
-          <h2 className="card-title text-2xl font-bold text-primary">{price}</h2>
-          <h2 className="text-base text-gray-500 font-mono">{details}</h2>
-         
-          <div className="card-actions justify-start">
-          
+    <div className="hero min-h-screen bg-base-200">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className='w-4/5 '>
+    <img className='rounded-xl shadow-xl' src={img} alt='' />
+    </div>
+    <div>
+      <h1 className="text-5xl font-bold py-2 text-primary">{title}</h1>
+      <p className="py-3 text-2xl font-bold">Price: {price}</p>
+      <p className="py-3 text-2xl font-bold">Duration: {time}</p>
+      <p className="py-6 text-mono text-grey-200">{details}</p>
       
-      </div>
-        </div> 
-      </div>
+    </div>
+  </div>
+</div>
+
+
       {/* {`/services/${_id}`} */}
         <div>
         <Link to='/'> <button className="btn btn-primary">Add Review</button></Link>
