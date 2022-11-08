@@ -12,7 +12,7 @@ const handleLogout=()=>{
   .catch(err=>console.error(err))
 }
     return (
-        <div className="navbar bg-pink-200  shadow-xl rounded-xl mb-10">
+        <div className="navbar bg-sky-200  shadow-xl rounded-xl mb-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,21 +33,21 @@ const handleLogout=()=>{
           </>
             :
            <>
-                <li className='font-bold text-pink-600'><Link to='/login'>Login</Link></li>
-                <li className='font-bold'><Link to='/register'>Register</Link></li>
+                <li className='font-bold text-primary'><Link to='/login'>Login</Link></li>
+                <li className='font-bold text-primary'><Link to='/register'>Register</Link></li>
                 </>
           }
              
             </ul>
           </div>
-          < a href  className="text-pink-600 normal-case text-2xl font-bold flex d-flex"><MdPhotoCameraFront></MdPhotoCameraFront> Smile Seeker</a>
+          < a href  className="text-primary normal-case text-2xl font-bold flex d-flex"><MdPhotoCameraFront></MdPhotoCameraFront> Smile Seeker</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             
-            <li className='font-bold text-pink-600'><Link to='/'>Home</Link></li>
-            <li className='font-bold text-pink-600'><Link to='/add service'>Add Service</Link></li>
-            <li className='font-bold text-pink-600'><Link to='/services'>Services</Link></li>
+            <li className='font-bold text-primary'><Link to='/'>Home</Link></li>
+            <li className='font-bold text-primary'><Link to='/add service'>Add Service</Link></li>
+            <li className='font-bold text-primary'><Link to='/services'>Services</Link></li>
             {
           user?.email ?
           <>
@@ -56,8 +56,8 @@ const handleLogout=()=>{
           </>
             :
            <>
-                <li className='font-bold text-pink-600'><Link to='/login'>Login</Link></li>
-                <li className='font-bold'><Link to='/register'>Register</Link></li>
+                <li className='font-bold text-primary'><Link to='/login'>Login</Link></li>
+                <li className='font-bold text-primary'><Link to='/register'>Register</Link></li>
                 </>
           }
            
