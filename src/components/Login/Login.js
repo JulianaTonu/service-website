@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
+import useTitle from './../../hooks/useTitle';
 const Login = () => {
  const {signIn,signInWithGoogle }=useContext(AuthContext)
  const location=useLocation()
  const navigate =useNavigate()
-
+useTitle('Login')
     const handleSubmit=event=>{
 
       const  from =location.state?.from?.pathname || '/' ;

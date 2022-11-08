@@ -2,9 +2,11 @@ import React from 'react';
 import Banner from './Banner';
 import { Link, useLoaderData } from 'react-router-dom';
 import PopularService from './PopularService/PopularService';
+import useTitle from '../../hooks/useTitle';
 
 const Home = () => {
     const pService =useLoaderData()
+    useTitle('Home')
     return (
         <div>
             <Banner></Banner>
