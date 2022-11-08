@@ -47,7 +47,7 @@ const handleLogout=()=>{
             
             <li className='font-bold text-pink-600'><Link to='/'>Home</Link></li>
             <li className='font-bold text-pink-600'><Link to='/add service'>Add Service</Link></li>
-            <li className='font-bold text-pink-600'><Link to='/services'>All Services</Link></li>
+            <li className='font-bold text-pink-600'><Link to='/services'>Services</Link></li>
             {
           user?.email ?
           <>
