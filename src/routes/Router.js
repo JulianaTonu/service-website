@@ -5,6 +5,7 @@ import Register from "../components/Register/Register";
 import Main from "../layout/Main";
 import Services from './../components/Services/Services';
 import ServiceDetails from './../components/Services/ServiceDetails';
+import AddService from "../components/AddService/AddService";
 
 export const router=createBrowserRouter([
     {
@@ -28,6 +29,10 @@ export const router=createBrowserRouter([
                 path:'/services/:id',
                 element:<ServiceDetails></ServiceDetails>,
                 loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path:'/add',
+                element:<AddService></AddService>
             },
             {
                 path:'/register',

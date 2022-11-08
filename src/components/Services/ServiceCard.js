@@ -10,7 +10,7 @@ const ServiceCard = ({service}) => {
       <div className="card-body">
         <h2 className="card-title text-2xl">{title}</h2>
         <h2 className="card-title text-2xl font-bold text-primary">{price}</h2>
-        <h2 className="text-xl">{details}</h2>
+        <h2 className="text-xl">{details.slice(0,100)}</h2>
        
         <div className="card-actions justify-start">
         

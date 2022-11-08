@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData, Link } from 'react-router-dom';
+import { useLoaderData} from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
