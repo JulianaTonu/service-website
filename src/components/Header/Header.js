@@ -55,10 +55,10 @@ const handleLogout=()=>{
           user?.email ?
           <>
           <li className='font-bold text-white font-serif'><Link to='/add'>Add Service</Link></li>
-         <li 
-         className='w-10 h-10 rounded-full'
+         <span 
+         className='text-white font-bold text-lg text-mono pt-2'
          
-         >{user?.photoURL}</li>
+         >{user?.displayName}</span>
           <span className=''><button className='btn btn-ghost font-bold text-white font-serif' onClick={handleLogout}>Logout</button></span>
           </>
             :

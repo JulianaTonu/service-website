@@ -20,7 +20,7 @@ if(loading){
         event.preventDefault()
         const form =event.target
         const name=form.name.value
-        const image=form.image.value
+        
         const email =form.email.value;
         const password=form.password.value
         console.log(name,email,password)
@@ -33,17 +33,17 @@ if(loading){
           form.reset()
           navigate('/login')
 
-          handleUpdateProfile(name , image)
+          handleUpdateProfile(name )
         })
         .catch(e=>console.error(e))
 
         //updateUserProfile
-        const handleUpdateProfile =(name,photoURL)=>{
+        const handleUpdateProfile =(name)=>{
 
           const profile = {
 
             displayName: name,
-            photoURL: image
+            
           }
           updateUserProfile(profile)
           .then(()=>{})
@@ -67,12 +67,12 @@ if(loading){
                 <input type="text" name='name' placeholder="your name" className="input input-bordered" />
               </div>
 
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text">ImageUrl</span>
                 </label>
                 <input type="text" name='image' placeholder="imageurl" className="input input-bordered" />
-              </div>
+              </div> */}
 
               <div className="form-control">
                 <label className="label">

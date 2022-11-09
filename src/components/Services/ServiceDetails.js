@@ -1,5 +1,5 @@
 
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, Link } from 'react-router-dom';
 
 
 const ServiceDetails = () => {
@@ -28,6 +28,11 @@ const ServiceDetails = () => {
 {/* //review section  */}
 
 <>
+<div className="card-actions justify-center my-10">
+    
+ <Link to={`/review/${_id}`}> <button className="btn btn-primary">Add Review</button></Link>
+</div>
+
 <div className="flex items-center space-x-3">
             <div className="avatar">
               <div className="mask mask-squircle w-12 h-12">
