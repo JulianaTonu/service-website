@@ -4,10 +4,10 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const AddReview = () => {
-    const {title, _id}=useLoaderData
+    const {title, _id}=useLoaderData()
     const {user}=useContext(AuthContext)
 
-    
+    console.log('mtid',_id)
 const handleClientReview=event=>{
     event.preventDefault()
     const form =event.target;

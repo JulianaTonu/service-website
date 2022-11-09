@@ -1,11 +1,21 @@
 
+import { useEffect, useState } from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
+import ReviewCard from '../ReviewCard/ReviewCard';
+
 
 
 const ServiceDetails = () => {
 
     const {title,img,details,price,time,_id} =useLoaderData()
+const [reviews, setReviews]=useState([])
 
+    useEffect(()=>{
+
+        fetch(`http://localhost:5000/reviews`)
+        .then(res=>res.json())
+        .then(data=>setReviews(data))
+    },[_id])
 
     return (
    
@@ -28,30 +38,24 @@ const ServiceDetails = () => {
 {/* //review section  */}
 
 <>
-<div className="card-actions justify-center my-10">
+<div className="card-actions justify-end my-10">
     
  <Link to={`/review/${_id}`}> <button className="btn btn-primary">Add Review</button></Link>
 </div>
 
-<div className="flex items-center space-x-3">
-            <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
-                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">Hart Hagerty</div>
-              <div className="text-sm opacity-50">United States</div>
-            </div>
-          </div>
+<div className='grid grid-cols-1 lg:grid-cols-2 gap-y-4'>
+{
+reviews.map(review=><ReviewCard
+key={review._id}
+review={review}
+></ReviewCard>)
+}
+</div>
+
 
 </>
 
-      {/* {`/services/${_id}`} */}
-        {/* <div>
-        <Link to='/'> <button className="btn btn-primary">Add Review</button></Link>
-        </div> */}
-
+   
 
         </>
         
