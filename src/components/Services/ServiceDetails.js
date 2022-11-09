@@ -35,10 +35,11 @@ const [reviews, setReviews]=useState([])
   </div>
 </div>
 
-{/* //review section  */}
+ {/* /review section   */}
 
 <>
-<div className="card-actions justify-end my-10">
+<h1 className='text-primary text-mono text-2xl pt-3 font-semibold'>What Clients say about this Service..</h1>
+<div className="card-actions justify-end my-4">
     
  <Link to={`/review/${_id}`}> <button className="btn btn-primary">Add Review</button></Link>
 </div>

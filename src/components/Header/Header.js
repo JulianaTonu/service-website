@@ -30,6 +30,7 @@ const handleLogout=()=>{
           user?.email ?
           <>
           <li className='font-bold'><Link to='/add service'>Add Service</Link></li>
+          <li className='font-bold text-white font-serif'><Link to='/myreviews'>My Review</Link></li>
          <li className='text-primary font-bold mt-3'>{user?.email}</li>
           <li className=''><button className='btn btn-ghost font-bold  font-serif' onClick={handleLogout}>Logout</button></li>
           </>
@@ -55,6 +56,7 @@ const handleLogout=()=>{
           user?.email ?
           <>
           <li className='font-bold text-white font-serif'><Link to='/add'>Add Service</Link></li>
+          <li className='font-bold text-white font-serif'><Link to='/myreviews'>My Review</Link></li>
          <span 
          className='text-white font-bold text-lg text-mono pt-2'
          
