@@ -8,6 +8,7 @@ import ServiceDetails from './../components/Services/ServiceDetails';
 import AddService from "../components/AddService/AddService";
 import Blog from "../components/Blog/Blog";
 import PrivateRoute from "../private/PrivateRoute";
+import AddReview from './../components/AddReview/AddReview';
 
 export const router=createBrowserRouter([
     {
@@ -41,6 +42,11 @@ export const router=createBrowserRouter([
                 element:<Register></Register>
             },
             
+            {
+                path:'/review/:id',
+                element:<AddReview></AddReview>,
+                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+            },
             {
                 path:'/login',
                 element:<Login></Login>
