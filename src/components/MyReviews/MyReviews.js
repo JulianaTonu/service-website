@@ -3,7 +3,7 @@ import { AuthContext } from '../../context/AuthProvider';
 import MyReviewCard from './MyReviewCard';
 
 const MyReviews = () => {
-    const {user}=useContext(AuthContext)
+    const {user,logout}=useContext(AuthContext)
     const [reviews, setReviews]=useState([])
 
     
@@ -14,9 +14,15 @@ const MyReviews = () => {
                 authorization:`Bearer ${localStorage.getItem('servicetoken')}`
             }
         })
-        .then(res=>res.json())
+        .then(res=>{
+
+            if(res.status === 401 || res.status ===403){
+               return logout()
+            }
+            return res.json()
+        })
         .then(data=>setReviews(data))
-    },[user?.email])
+    },[user?.email, logout])
    
     
     
