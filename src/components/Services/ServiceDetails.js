@@ -8,15 +8,14 @@ import ReviewCard from '../ReviewCard/ReviewCard';
 const ServiceDetails = () => {
 
     const {title,img,details,price,time,_id} =useLoaderData()
-const [reviews, setReviews]=useState([])
+    const [reviews, setReviews]=useState([])
 
     useEffect(()=>{
 
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`http://localhost:5000/reviews/service?servicename=${title}`)
         .then(res=>res.json())
         .then(data=>setReviews(data))
-    },[_id])
-
+    },[title])
     return (
    
         <>
