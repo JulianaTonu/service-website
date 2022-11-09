@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const MyReviewCard = ({review}) => {
     console.log(review)
+    const [myreview, setMyReview]=useState(review)
+
 
     const handleDelete =id =>{
       const procced =window.confirm(`Are you sure you want to delete this review?`)
@@ -11,7 +14,14 @@ const MyReviewCard = ({review}) => {
           method:'DELETE',
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+          console.log(data)
+          if(data.deletedCount > 0){
+            toast.success('Review Deleted Successfully')
+            const remaining =myreview.filter(rev=>rev._id !== review._id)
+            setMyReview(remaining)
+          }
+        })
       }
     }
     return (
