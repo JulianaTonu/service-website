@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
+
 const MyReviewCard = ({review}) => {
     console.log(review)
+   
     const [myreview, setMyReview]=useState(review)
 
-
+    
     const handleDelete =id =>{
       const procced =window.confirm(`Are you sure you want to delete this review?`)
       if(procced){
@@ -24,6 +26,8 @@ const MyReviewCard = ({review}) => {
         })
       }
     }
+
+    
     return (
        <div>
         <h1 className='text-2xl text-primary mx-4'>{review.servicename}</h1>

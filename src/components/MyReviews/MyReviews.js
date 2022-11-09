@@ -9,11 +9,17 @@ const MyReviews = () => {
     
     useEffect(()=>{
 
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`,{
+            headers:{
+                authorization:`Bearer ${localStorage.getItem('servicetoken')}`
+            }
+        })
         .then(res=>res.json())
         .then(data=>setReviews(data))
     },[user?.email])
    
+    
+    
 
     if(reviews.length === 0){
         return<h1 className='text-red-500 font-bold text-3xl text-center my-32  '>No Review Were Added</h1>

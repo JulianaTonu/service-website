@@ -1,12 +1,13 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
-import ReviewCard from '../ReviewCard/ReviewCard';
 
+import ReviewCard from '../ReviewCard/ReviewCard';
 
 
 const ServiceDetails = () => {
 
+  
     const {title,img,details,price,time,_id} =useLoaderData()
     const [reviews, setReviews]=useState([])
 
@@ -16,6 +17,8 @@ const ServiceDetails = () => {
         .then(res=>res.json())
         .then(data=>setReviews(data))
     },[title])
+
+    
     return (
    
         <>
@@ -41,7 +44,9 @@ const ServiceDetails = () => {
 <div className="card-actions justify-end my-4">
     
  <Link to={`/review/${_id}`}> <button className="btn btn-primary">Add Review</button></Link>
+
 </div>
+
 
 <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-4'>
 {

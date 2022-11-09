@@ -20,7 +20,7 @@ if(loading){
 
     const handleSubmit=event=>{
 
-      const  from =location.state?.from?.pathname || '/' ;
+      const from =location.state?.from?.pathname || '/' ;
     event.preventDefault()
         const form =event.target
         const email =form.email.value;     
@@ -31,8 +31,29 @@ if(loading){
         .then(result=>{
         const user=
         result.user
-        navigate(from,{replace:true})
         console.log('login user', user)
+
+const currentUser= {
+  email:user.email
+}
+console.log(currentUser)
+
+//jwt token
+
+fetch('http://localhost:5000/jwt',{
+  method:'POST',
+  headers:{
+    'content-type':'application/json'
+  },
+  body:JSON.stringify(currentUser)
+})
+.then(res=>res.json())
+.then(data=>{
+  console.log(data)
+  localStorage.setItem('servicetoken',data.token)
+})
+
+        // navigate(from,{replace:true})
       })
       .catch(err=>console.error(err))
       }
