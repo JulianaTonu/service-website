@@ -10,6 +10,7 @@ import Blog from "../components/Blog/Blog";
 import PrivateRoute from "../private/PrivateRoute";
 import AddReview from './../components/AddReview/AddReview';
 import MyReviews from "../components/MyReviews/MyReviews";
+import UpdateReview from "../components/UpdateReview/UpdateReview";
 
 export const router=createBrowserRouter([
     {
@@ -52,6 +53,11 @@ export const router=createBrowserRouter([
                 path:'/myreviews',
                 element:<MyReviews></MyReviews>
             },
+            {
+                path:'/updateReview',
+                element:<UpdateReview></UpdateReview>
+            },
+
             {
                 path:'/login',
                 element:<Login></Login>
