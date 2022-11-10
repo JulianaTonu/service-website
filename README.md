@@ -1,3 +1,52 @@
+# Project: Smile Seekers (Service-Review-website)
+## Live Link: https://smile-seekers.web.app
+
+## Features :
+
+#### 1.Firebase Authentication(email &password , Google)
+
+#### 2. Clickable Image
+
+#### 3. Private Route
+
+#### 4. Clickable Cards
+
+#### 5. User Can Add service
+
+#### 6. User can add reviews
+
+#### 7. User can delete review
+
+#### 8. Responsive ( Mobile And Desktop)
+
+## Technology💻
+1. React 
+2. Tailwind , daisyUi
+3. React Icons
+4. React Hot Toast
+5. React Router Dom
+6. React-image-viewer-hook
+7. Firebase
+8. MongoDB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
