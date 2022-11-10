@@ -21,6 +21,7 @@ const ServiceDetails = () => {
         .then(data=>setReviews(data))
     },[title])
 
+    //toast for unregister user
     const handletoast=()=>{
     return(toast.error('please login for add review'))
         
@@ -35,9 +36,9 @@ const ServiceDetails = () => {
     <div className='w-4/5 '>
     <img className='rounded-xl shadow-xl' src={img} alt='' />
     </div>
-    <div>
+    <div className='w-3/5'>
       <h1 className="text-5xl font-bold py-2 text-primary">{title}</h1>
-      <p className="py-3 text-2xl font-bold">Price: {price}</p>
+      <p className="py-3 text-2xl font-bold">Price: ${price}</p>
       <p className="py-3 text-2xl font-bold">Duration: {time}</p>
       <p className="py-6 text-mono text-grey-200">{details}</p>
       
@@ -67,7 +68,6 @@ const ServiceDetails = () => {
           }
 
    
- {/* <Link to={`/review/${_id}`}> <button className="btn btn-primary">Add Review</button></Link> */}
 
 </div>
 

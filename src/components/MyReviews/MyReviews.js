@@ -4,35 +4,27 @@ import useTitle from '../../hooks/useTitle';
 import MyReviewCard from './MyReviewCard';
 
 const MyReviews = () => {
-    const {user}=useContext(AuthContext)
+    const {user,logout}=useContext(AuthContext)
     useTitle('My Review')
     const [reviews, setReviews]=useState([])
 
-    
+
     useEffect(()=>{
 
-        fetch(`https://service-website-server.vercel.app/reviews?email=${user?.email}`)
-        
-        .then(res=>res.json())
+        fetch(`https://service-website-server.vercel.app/reviews?email=${user?.email}`,{
+            headers:{
+                authorization:`Bearer ${localStorage.getItem('servicetoken')}`
+            }
+        })
+        .then(res=>{
+
+            if(res.status === 401 || res.status === 403){
+               return logout()
+            }
+            return res.json()
+        })
         .then(data=>setReviews(data))
-    },[user?.email])
-
-    // useEffect(()=>{
-
-    //     fetch(`https://service-website-server.vercel.app/reviews?email=${user?.email}`,{
-    //         headers:{
-    //             authorization:`Bearer ${localStorage.getItem('servicetoken')}`
-    //         }
-    //     })
-    //     .then(res=>{
-
-    //         if(res.status === 401 || res.status === 403){
-    //            return logout()
-    //         }
-    //         return res.json()
-    //     })
-    //     .then(data=>setReviews(data))
-    // },[user?.email, logout])
+    },[user?.email, logout])
    
     
     
