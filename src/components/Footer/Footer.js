@@ -1,11 +1,11 @@
 import React from 'react';
-import { MdPhotoCameraFront } from "react-icons/md";
+
 const Footer = () => {
     return (
         <footer className="footer footer-center p-10 bg-blue-900 mt-4 text-primary-content">
         <div>
 
-         <h1 className="text-grey-200 normal-case text-3xl font-bold flex d-flex"><MdPhotoCameraFront></MdPhotoCameraFront>
+         <h1 className="text-grey-200 normal-case text-3xl font-bold flex d-flex">
          <img src="https://www.smileseekersbd.com/wp-content/uploads/2021/06/Smile-Seeker-Signature-White.png" className='w-44 ' alt="" />
          </h1>
 
@@ -20,7 +20,7 @@ const Footer = () => {
           <p className="font-bold text-grey-200 py-3">
          
             House#12,Road#1,Sector#6,Uttara,Dhaka,
-            <br />Bangladesh 1230 br
+            <br />Bangladesh 1230 
           </p> 
           <p className='text-grey-200 '>Copyright © 2022 - All right reserved</p>
         </div> 

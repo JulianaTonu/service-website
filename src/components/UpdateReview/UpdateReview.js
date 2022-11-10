@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 
 
 const UpdateReview = () => {
+    useTitle('Update Review')
     const {user}=useContext(AuthContext)
     const {servicename,_id,message}=useLoaderData()
 

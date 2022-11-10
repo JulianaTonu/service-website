@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MdPhotoCameraFront } from "react-icons/md";
+
 import { useContext } from 'react';
 import { AuthContext } from './../../context/AuthProvider';
 
@@ -20,30 +20,30 @@ const handleLogout=()=>{
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
              
-            <li className='font-bold'><Link to='/'>Home</Link></li>
-            <li className='font-bold'><Link to='/blog'>Blog</Link></li>
+            <li className='font-bold  font-serif'><Link to='/'>Home</Link></li>
+            <li className='font-bold  font-serif'><Link to='/blog'>Blog</Link></li>
             
-            <li className='font-bold'><Link to='/services'>All Services</Link></li>
+            <li className='font-bold  font-serif'><Link to='/services'>All Services</Link></li>
 
 {/* //add condition for login and logout           */}
             {
           user?.email ?
           <>
-          <li className='font-bold'><Link to='/add service'>Add Service</Link></li>
-          <li className='font-bold text-white font-serif'><Link to='/myreviews'>My Review</Link></li>
-         <li className='text-primary font-bold mt-3'>{user?.email}</li>
+          <li className='font-bold  font-serif'><Link to='/add service'>Add Service</Link></li>
+          <li className='font-bold  font-serif'><Link to='/myreviews'>My Review</Link></li>
+         <li className='text-primary font-bold mt-3'>{user?.displayName}</li>
           <li className=''><button className='btn btn-ghost font-bold  font-serif' onClick={handleLogout}>Logout</button></li>
           </>
             :
            <>
-                <li className='font-bold  text-white font-serif'><Link to='/login'>Login</Link></li>
-                <li className='font-bold  text-white font-serif'><Link to='/register'>Register</Link></li>
+                <li className='font-bold   font-serif'><Link to='/login'>Login</Link></li>
+                <li className='font-bold  font-serif'><Link to='/register'>Register</Link></li>
                 </>
           }
              
             </ul>
           </div>
-          < a href  className="text-white normal-case text-2xl font-bold flex d-flex font-mono"><MdPhotoCameraFront></MdPhotoCameraFront>  <img src="https://www.smileseekersbd.com/wp-content/uploads/2021/06/Smile-Seeker-Signature-White.png" className='w-44 ' alt="" /></a>
+          < a href  className="text-white normal-case text-2xl font-bold flex d-flex font-mono"><img src="https://www.smileseekersbd.com/wp-content/uploads/2021/06/Smile-Seeker-Signature-White.png" className='w-44 ' alt="" /></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
@@ -58,7 +58,7 @@ const handleLogout=()=>{
           <li className='font-bold text-white font-serif'><Link to='/add'>Add Service</Link></li>
           <li className='font-bold text-white font-serif'><Link to='/myreviews'>My Review</Link></li>
          <span 
-         className='text-white font-bold text-lg text-mono pt-2'
+         className='text-white font-bold text-lg  font-serif pt-2'
          
          >{user?.displayName}</span>
           <span className=''><button className='btn btn-ghost font-bold text-white font-serif' onClick={handleLogout}>Logout</button></span>
