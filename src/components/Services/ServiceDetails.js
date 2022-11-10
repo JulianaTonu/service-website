@@ -13,7 +13,7 @@ const ServiceDetails = () => {
 
     useEffect(()=>{
 
-        fetch(`http://localhost:5000/reviews/service?servicename=${title}`)
+        fetch(`https://service-website-server.vercel.app/reviews/service?servicename=${title}`)
         .then(res=>res.json())
         .then(data=>setReviews(data))
     },[title])

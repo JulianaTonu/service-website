@@ -11,7 +11,7 @@ const AddService = () => {
     event.preventDefault()
     console.log(service)
 
-    fetch('http://localhost:5000/services',{
+    fetch('https://service-website-server.vercel.app/services',{
 
      method:'POST',
      headers:{
@@ -33,9 +33,12 @@ const AddService = () => {
     newService[field]=value;
     setService(newService)
     } 
-
+   
     return (
-        <Form onSubmit={handleAddService}>
+       <div>
+ <h1 className='text-3xl text-primary font-bold text-center my-10'>Add Service </h1>
+
+<Form onSubmit={handleAddService}>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 p-10 bg-slate-300'>
 
           
@@ -54,6 +57,7 @@ const AddService = () => {
        <input type="submit" value='Add Service' className="btn btn-active btn-primary w-40 px-10 "/>
        </div>
         </Form>
+       </div>
     );
 };
 

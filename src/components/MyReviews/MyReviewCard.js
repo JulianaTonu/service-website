@@ -11,8 +11,9 @@ const MyReviewCard = ({review}) => {
     
     const handleDelete =id =>{
       const procced =window.confirm(`Are you sure you want to delete this review?`)
+      
       if(procced){
-        fetch(`http://localhost:5000/reviews/${id}`,{
+        fetch(`https://service-website-server.vercel.app/reviews/${id}`,{
           method:'DELETE',
         })
         .then(res=>res.json())
@@ -43,7 +44,7 @@ const MyReviewCard = ({review}) => {
               <div className="text-sm opacity-50">{review.message}</div>
               <button onClick={()=>handleDelete(review._id)} className='btn btn-sm my-2'>Delete</button>
 
-              <Link to ='/updateReview'><button  className='btn btn-sm my-2 ml-4'>Edit Review</button></Link>
+              <Link to ={`/updateReview/${review._id}`}><button  className='btn btn-sm my-2 ml-4'>Edit Review</button></Link>
             </div>
           </div>
        </div>

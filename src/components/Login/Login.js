@@ -40,7 +40,7 @@ console.log(currentUser)
 
 //jwt token
 
-fetch('http://localhost:5000/jwt',{
+fetch('https://service-website-server.vercel.app/jwt',{
   method:'POST',
   headers:{
     'content-type':'application/json'
@@ -53,7 +53,7 @@ fetch('http://localhost:5000/jwt',{
   localStorage.setItem('servicetoken',data.token)
 })
 
-        // navigate(from,{replace:true})
+        navigate(from,{replace:true})
       })
       .catch(err=>console.error(err))
       }

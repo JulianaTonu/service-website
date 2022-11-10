@@ -20,20 +20,20 @@ export const router=createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch(`http://localhost:5000`)
+                loader:()=>fetch(`https://service-website-server.vercel.app`)
             },
             
             {
                 path:'/services',
                 element:<Services></Services>,
-                loader:()=>fetch(`http://localhost:5000/services`)
+                loader:()=>fetch(`https://service-website-server.vercel.app/services`)
             },
            
 
             {
                 path:'/services/:id',
                 element:<ServiceDetails></ServiceDetails>,
-                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params})=>fetch(`https://service-website-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'/add',
@@ -47,17 +47,18 @@ export const router=createBrowserRouter([
             {
                 path:'/review/:id',
                 element:<AddReview></AddReview>,
-                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params})=>fetch(`https://service-website-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'/myreviews',
                 element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
             {
-                path:'/updateReview',
-                element:<UpdateReview></UpdateReview>
+                path:'/updateReview/:id',
+                element:<UpdateReview></UpdateReview>,
+                loader:({params})=>fetch(`https://service-website-server.vercel.app/reviewss/${params.id}`)
             },
-
+         
             {
                 path:'/login',
                 element:<Login></Login>
