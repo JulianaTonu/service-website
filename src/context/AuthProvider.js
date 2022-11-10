@@ -34,6 +34,7 @@ const updateUserProfile =(profile)=>{
 
   //logout  
     const logout=()=>{
+        localStorage.removeItem('mytoken')
      return signOut(auth)
             }
     useEffect(()=>{

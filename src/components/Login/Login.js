@@ -50,10 +50,10 @@ fetch('https://service-website-server.vercel.app/jwt',{
 .then(res=>res.json())
 .then(data=>{
   console.log(data)
-  localStorage.setItem('servicetoken',data.token)
+  localStorage.setItem('mytoken', data.token)
+  navigate(from,{replace:true})
 })
 
-        navigate(from,{replace:true})
       })
       .catch(err=>console.error(err))
       }

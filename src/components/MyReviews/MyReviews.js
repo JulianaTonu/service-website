@@ -13,13 +13,13 @@ const MyReviews = () => {
 
         fetch(`https://service-website-server.vercel.app/reviews?email=${user?.email}`,{
             headers:{
-                authorization:`Bearer ${localStorage.getItem('servicetoken')}`
+                authorization:`Bearer ${localStorage.getItem('mytoken')}`
             }
         })
         .then(res=>{
 
             if(res.status === 401 || res.status === 403){
-               return logout()
+               logout()
             }
             return res.json()
         })
@@ -30,7 +30,7 @@ const MyReviews = () => {
     
 
     if(reviews.length === 0){
-        return<h1 className='text-red-500 font-bold text-3xl text-center my-32  '>No Review Were Added</h1>
+        return<h1 className='text-red-500 font-bold text-3xl text-center my-32'>No Review Were Added</h1>
     }
     console.log('reviiiiiiewwwww',reviews)
     return (

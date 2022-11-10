@@ -23,7 +23,9 @@ const AddService = () => {
     .then(data=>{
         toast.success('Service added Successfully')
         console.log(data)
+        event.target.reset()
     })
+   
     }
 
     const handleInputBlur =event=>{
